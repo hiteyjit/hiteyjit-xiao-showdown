@@ -68,6 +68,6 @@ Install the following Arduino libraries:
 ---
 
 **Author:** Hiteyjit Singh Gujral
-**License:** MIT (see `LICENSE` file for details)
+**License:** MSLA (see `LICENSE` file for details)
 
 
