@@ -9,7 +9,7 @@
 //setting constants
 const uint8_t ESC_PIN = D1; //ESC pin connected to XIAO
 const int ESC_NEUTRAL_US = 1500; //setting "stop" signal value for ESC. Also necessary to arm the ESC.
-const int ESC_MIN_US = 1450; //setting minimum PWM value signal to send to ESC 
+const int ESC_MIN_US = 1450; //setting minimum PWM value signal to send to ESC --> the reverse command 
 const int ESC_MAX_US = 1900; //setting maximum PWM value signal to send to ESC
 const uint32_t ARM_DELAY_MS = 5000; //delay to allow the ESC to recognize the stopped signal & arm itself.
 
@@ -28,6 +28,8 @@ uint32_t lastPktMs = 0;
 //setting up conversion of raw signal from BT to be mapped to PWM for ESC control.
 static int rawToUs(uint16_t raw){
   int pwm = map((int)raw, 2850, 3300, 1500, 1800);
+ 
+  //Raw signal thresholds to either stop motor movement (pwm = 1500), or move motor in reverse (ESC_MIN_US)
   if (raw < 2850) { 
     pwm = 1500; 
    
