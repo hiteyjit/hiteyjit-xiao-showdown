@@ -10,7 +10,7 @@
 #define SENSOR_PIN2 D1 // Index
 #define SENSOR_PIN3 D2 // Middle
 #define SENSOR_PIN4 D3 // Ring
-#define SENSOR_PIN5 D5 // Pinky
+#define SENSOR_PIN5 D6 // Pinky
 
 
 volatile uint16_t lastValue = 0;
